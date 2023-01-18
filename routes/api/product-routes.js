@@ -1,17 +1,17 @@
-const router = require('express').Router();
-const { Product, Category, Tag, ProductTag } = require('../../models');
+const router = require("express").Router();
+const { Product, Category, Tag, ProductTag } = require("../../models");
 
 //`/api/products` endpoint
 
 // get all products
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   // find all products
   // be sure to include its associated Category and Tag data
   try {
     const productData = await Product.findAll({
       include: [{ model: Category, Tag }],
     });
-    res.status(200).json(productData)
+    res.status(200).json(productData);
   } catch {
     console.log(err);
     res.status(500).json(err);
@@ -19,15 +19,13 @@ router.get('/', async (req, res) => {
 });
 
 // get one product
-router.get('/:id', async (req, res) => {
+router.get("/:id", async (req, res) => {
   // find a single product by its `id`
   // be sure to include its associated Category and Tag data
   try {
-    const product = await Product.findByPk(
-      req.params.id,
-      {
-        include: [{ model: Category }],
-      });
+    const product = await Product.findByPk(req.params.id, {
+      include: [{ model: Category }],
+    });
     res.status(200).json(product);
   } catch (err) {
     console.log(err);
@@ -35,8 +33,8 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// create new product
-router.post('/', (req, res) => {
+// create new product //creates a new product but does not return the product obj in json format
+router.post("/", (req, res) => {
   /* req.body should look like this...
     {
       product_name: "Basketball",
@@ -67,8 +65,8 @@ router.post('/', (req, res) => {
     });
 });
 
-// update product
-router.put('/:id', (req, res) => {
+// update product //updates a product but does not return the product obj in json format
+router.put("/:id", (req, res) => {
   // update product data
   Product.update(req.body, {
     where: {
@@ -109,7 +107,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete("/:id", async (req, res) => {
   // delete one product by its `id` value
   try {
     const deleteProduct = await Product.destroy({
@@ -120,7 +118,7 @@ router.delete('/:id', async (req, res) => {
     res.status(200).json(deleteProduct);
   } catch (err) {
     console.log(err);
-    res.status(500).json(err)
+    res.status(500).json(err);
   }
 });
 
