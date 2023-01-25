@@ -27,7 +27,7 @@ Instructions for use
 
 Github repo: https://github.com/michelletrn/e-commerce
 
-![click here to view demo video](<iframe src="https://drive.google.com/file/d/1WuuoDqiFt7bve6ZCJUZYUEpfCxKMdsuT/preview" width="640" height="480"></iframe>)
+![click here to view demo video](https://drive.google.com/file/d/1WuuoDqiFt7bve6ZCJUZYUEpfCxKMdsuT/view)
 
 ## License
 
