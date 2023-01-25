@@ -25,9 +25,9 @@ Instructions for use
 - run 'npm run seed' to seed the database
 - insomnia to interact with the application
 
-Github repo: https://github.com/michelletrn/e-commerce
+Github repo: https://github.com/michelletrn/e-commerce \n
 
-![click here to view demo video](https://drive.google.com/file/d/1P1snP1fxoPBw5QPPgj6wwk0lh16qos6V/view)
+Demo: https://drive.google.com/file/d/1P1snP1fxoPBw5QPPgj6wwk0lh16qos6V/view
 
 ## License
 
